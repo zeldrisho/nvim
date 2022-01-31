@@ -11,6 +11,7 @@ else
 endif
 
 let g:dracula_colorterm = 0
+
 let g:vim_bootstrap_langs = ""
 let g:vim_bootstrap_editor = "neovim"				" nvim or vim
 let g:vim_bootstrap_theme = "dracula"
