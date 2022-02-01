@@ -23,10 +23,10 @@ EOF
 
 
 " TreeSitter
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
+lua << EOF
+require('nvim-treesitter.configs').setup {
   -- One of "all", "maintained" (parsers with maintainers), or a list of languages
-  ensure_installed = {"cpp", "java", "bash", "vim"},
+  ensure_installed = {"cpp", "java", "bash", "vim", "lua"},
 
   -- Install languages synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -46,49 +46,32 @@ require'nvim-treesitter.configs'.setup {
     -- Using this option may slow down your editor, and you may see some duplicate highlights.
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
-  },
+  }
 }
 EOF
 
 
-" Fix airline
-let g:airline_powerline_fonts = 1
+" Commenter
+lua << EOF
+    require('nvim_comment').setup()
+EOF
 
+" Lualine
+lua << EOF
+    require('lualine').setup()
+EOF
 
-" Toggle terminal
-function! OpenFloatTerm()
-  let height = float2nr((&lines - 2) / 1.5)
-  let row = float2nr((&lines - height) / 2)
-  let width = float2nr(&columns / 1.5)
-  let col = float2nr((&columns - width) / 2)
-  " Border Window
-  let border_opts = {
-    \ 'relative': 'editor',
-    \ 'row': row - 1,
-    \ 'col': col - 2,
-    \ 'width': width + 4,
-    \ 'height': height + 2,
-    \ 'style': 'minimal'
-    \ }
-  let border_buf = nvim_create_buf(v:false, v:true)
-  let s:border_win = nvim_open_win(border_buf, v:true, border_opts)
-  " Main Window
-  let opts = {
-    \ 'relative': 'editor',
-    \ 'row': row,
-    \ 'col': col,
-    \ 'width': width,
-    \ 'height': height,
-    \ 'style': 'minimal'
-    \ }
-  let buf = nvim_create_buf(v:false, v:true)
-  let win = nvim_open_win(buf, v:true, opts)
-  terminal
-  startinsert
-  " Hook up TermClose event to close both terminal and border windows
-  autocmd TermClose * ++once :q | call nvim_win_close(s:border_win, v:true)
-endfunction
+" Fzf lua files map
+nnoremap <c-P> <cmd>lua require('fzf-lua').files()<CR>
 
-nnoremap <A-t> :call OpenFloatTerm()<CR>
+" Term
+lua << EOF
+require('toggleterm').setup {
+    size=3 
+}
+EOF
+
+nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
+tnoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
 
 

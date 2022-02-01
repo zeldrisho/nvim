@@ -1,7 +1,7 @@
 
-# My Neovim config
-
-Generate by https://vim-bootstrap.com/ but add more features
+# Sources:
+https://vim-bootstrap.com/
+https://github.com/editor-bootstrap/vim-bootstrap
 
 
 
