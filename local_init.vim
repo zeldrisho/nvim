@@ -67,7 +67,7 @@ nnoremap <c-P> <cmd>lua require('fzf-lua').files()<CR>
 " Term
 lua << EOF
 require('toggleterm').setup {
-    size=3 
+    size=8
 }
 EOF
 
