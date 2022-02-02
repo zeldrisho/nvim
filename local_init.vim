@@ -62,16 +62,20 @@ lua << EOF
 EOF
 
 " Fzf lua files map
-nnoremap <c-P> <cmd>lua require('fzf-lua').files()<CR>
+nnoremap <c-O> <cmd>lua require('fzf-lua').files()<CR>
+nnoremap <c-P> <cmd>lua require('fzf-lua').oldfiles()<CR>
 
 " Term
 lua << EOF
 require('toggleterm').setup {
-    size=8
+    direction = 'float',
 }
 EOF
 
 nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
 tnoremap <silent><c-t> <Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>
 
-
+" Autopair
+lua << EOF
+    require('nvim-autopairs').setup()
+EOF
