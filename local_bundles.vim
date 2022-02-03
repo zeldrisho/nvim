@@ -1,4 +1,5 @@
 Plug 'terrortylor/nvim-comment'
+Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'dense-analysis/ale'
 Plug 'lukas-reineke/indent-blankline.nvim'
@@ -12,3 +13,4 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'romgrk/barbar.nvim'
 Plug 'akinsho/toggleterm.nvim'
 Plug 'windwp/nvim-autopairs'
+Plug 'lewis6991/gitsigns.nvim'
