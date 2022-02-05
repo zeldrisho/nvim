@@ -59,7 +59,7 @@ EOF
 
 " Fzf lua map
 nnoremap <c-O> <cmd>lua require('fzf-lua').files({ cwd = '~' })<CR>
-nnoremap <c-P> <cmd>lua require('fzf-lua').oldfiles()<CR>
+nnoremap <c-P> <cmd>lua require('fzf-lua').files()<CR>
 
 " Term map
 nnoremap <silent><c-t> <Cmd>exe v:count1 . "ToggleTerm"<CR>
