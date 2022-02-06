@@ -72,6 +72,6 @@ map('n', '<c-O>', '<cmd>lua require("fzf-lua").files({ cwd = "~" })<CR>')
 map('n', '<c-P>', '<cmd>lua require("fzf-lua").files()<CR>')
 
 -- toggle term
-map('n', 'c-T', '<Cmd>exe v:count1 . "ToggleTerm"<CR>')
-map('n', 'c-T', '<Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>')
+map('n', '<c-t>', '<Cmd>exe v:count1 . "ToggleTerm"<CR>')
+map('t', '<c-t>', '<Esc><Cmd>exe v:count1 . "ToggleTerm"<CR>')
 
