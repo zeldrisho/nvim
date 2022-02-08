@@ -1,8 +1,8 @@
+require('packer_compiled')
 local fn = vim.fn
-local install_path = fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
-
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
-  fn.execute('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
+  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
 end
 
 vim.cmd [[
@@ -13,7 +13,7 @@ vim.cmd [[
 ]]
 
 local use = require('packer').use
-require('packer').startup(function()
+require('packer').startup({function()
   use 'wbthomason/packer.nvim' -- Package manager
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
   use 'Mofiqul/dracula.nvim' -- theme
@@ -38,6 +38,20 @@ require('packer').startup(function()
   use'L3MON4D3/LuaSnip'
   use'saadparwaiz1/cmp_luasnip'
   use 'romgrk/barbar.nvim'
-end)
+  use 'lewis6991/impatient.nvim'
+
+  if packer_bootstrap then
+    require('packer').sync()
+  end
+end,
+config = {
+    -- Move to lua dir so impatient.nvim can cache it
+    compile_path = fn.stdpath('config')..'/lua/packer_compiled.lua'
+  }
+})
+
+for _, file in ipairs(fn.readdir(fn.stdpath('config')..'/lua/plugins', [[v:val =~ '\.lua$']])) do
+  require('plugins.'..file:gsub('%.lua$', ''))
+end
 
 
