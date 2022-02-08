@@ -1,9 +1,4 @@
-local fn = vim.fn
-
+require('impatient')
 require('plugins')
 require('configs')
-require('keybindings')
-
-for _, file in ipairs(fn.readdir(fn.stdpath('config')..'/lua/plugins', [[v:val =~ '\.lua$']])) do
-  require('plugins.'..file:gsub('%.lua$', ''))
-end
+require('mappings')
