@@ -12,13 +12,7 @@ vim.cmd [[
 ]]
 
 local use = require('packer').use
-require('packer').startup({function()
-    use {
-        'lewis6991/impatient.nvim',
-        config = function()
-            require('impatient')
-        end
-    }
+require('packer').startup(function()
     use 'wbthomason/packer.nvim' -- Package manager
     use {
         'numToStr/Comment.nvim',
@@ -63,18 +57,11 @@ require('packer').startup({function()
     use 'hrsh7th/cmp-buffer'
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
-    use 'nathom/filetype.nvim'
 
     if packer_bootstrap then
         require('packer').sync()
     end
-end,
-config = {
-    -- Move to lua dir so impatient.nvim can cache it
-    compile_path = vim.fn.stdpath('config')..'/lua/packer_compiled.lua',
-}})
-
-require('packer_compiled')
+end)
 
 for _, file in ipairs(fn.readdir(fn.stdpath('config')..'/lua/plugins', [[v:val =~ '\.lua$']])) do
   require('plugins.'..file:gsub('%.lua$', ''))
