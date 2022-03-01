@@ -3,14 +3,14 @@
 ### Prepare
 
 - neovim
-- nodejs
 - xclip
-- ttf-jetbrains-mono
-- python-pynvim
-- bash-language-server
-- lua-language-server
-- clang
-- [jdtls](https://github.com/eruizc-dev/jdtls-launcher#installation)
+- nodejs (optional)
+- ttf-jetbrains-mono (optional)
+- python-pynvim (optional)
+- bash-language-server (optional)
+- lua-language-server (optional)
+- clang (optional)
+- [jdtls](https://github.com/eruizc-dev/jdtls-launcher#installation) (optional)
 
 ### Install
 
