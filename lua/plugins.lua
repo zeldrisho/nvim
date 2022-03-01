@@ -64,7 +64,7 @@ require('packer').startup(function()
 end)
 
 for _, file in ipairs(fn.readdir(fn.stdpath('config')..'/lua/plugins', [[v:val =~ '\.lua$']])) do
-  require('plugins.'..file:gsub('%.lua$', ''))
+    require('plugins.'..file:gsub('%.lua$', ''))
 end
 
 

@@ -31,7 +31,8 @@ opt.smartcase = true -- smart case
 opt.smartindent = true -- make indenting smarter again
 opt.spell = false -- disable spell checking
 opt.swapfile = false -- creates a swapfile
-opt.tabstop = 4
+opt.tabstop = 8
+opt.smarttab = true
 opt.titlestring = "%F"
 opt.title = true -- set the title of window to the value of the titlestring
 opt.ttyfast = true -- don't wait for terminal to be ready
@@ -79,9 +80,3 @@ vim.cmd [[
     augroup END
 ]]
 
-vim.cmd [[
-    augroup vimrc-sync-fromstart
-        autocmd!
-        autocmd BufEnter * :syntax sync maxlines=200
-    augroup END
-]]
