@@ -5,7 +5,8 @@
 - neovim
 - xclip
 - nodejs (optional)
-- ttf-jetbrains-mono (optional)
+- fzf (optional)
+- nerd-fonts-jetbrains-mono (AUR) (optional)
 - python-pynvim (optional)
 - bash-language-server (optional)
 - lua-language-server (optional)
