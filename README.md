@@ -5,9 +5,8 @@
 - neovim
 - xclip
 - nodejs (optional)
-- fzf (optional)
+- fzf
 - nerd-fonts-jetbrains-mono (AUR) (optional)
-- python-pynvim (optional)
 - bash-language-server (optional)
 - lua-language-server (optional)
 - clang (optional)
@@ -16,11 +15,7 @@
 ### Install
 
 ```shell
-# Remove current config
-rm -r $HOME/.config/nvim/
-# Clone repository
 git clone https://github.com/giatrung2012/nvim $HOME/.config/nvim/
-# Open nvim and install plugins
 nvim +PackerSync
 ```
 
