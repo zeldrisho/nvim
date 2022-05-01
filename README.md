@@ -3,14 +3,9 @@
 ### Prepare
 
 - neovim
-- xclip
-- nodejs (optional)
-- fzf
-- nerd-fonts-jetbrains-mono (AUR) (optional)
-- bash-language-server (optional)
-- lua-language-server (optional)
-- clang (optional)
-- [jdtls](https://github.com/eruizc-dev/jdtls-launcher#installation) (optional)
+- For clipboard in X11: xclip
+- For fzf-lua plugin: fzf
+- For font & icons: nerd-fonts-jetbrains-mono (AUR)
 
 ### Install
 
