@@ -1,5 +1,5 @@
 require('nvim-treesitter.configs').setup {
-    ensure_installed = {"cpp", "java", "bash", "lua", "markdown"},
+    ensure_installed = {"bash", "lua", "markdown", "fish"},
     highlight = {
         enable = true, -- false will disable the whole extension
     },
